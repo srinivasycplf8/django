@@ -6,4 +6,5 @@ urlpatterns = [
     #goes to views page and their function mae called index 
     #so whathtver it does it returns our value
     path('', views.index,name="index")
+    dsxk
 ]
