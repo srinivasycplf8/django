@@ -1,6 +1,8 @@
 from . import views
 from django.urls import path,re_path
 
+app_name='music'
+
 urlpatterns = [
     #the '' is used when the user didin't select specific song or default it
     #goes to views page and their function mae called index 
