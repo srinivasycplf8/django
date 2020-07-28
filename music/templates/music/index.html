@@ -1,11 +1,36 @@
-<!--If you have albmus then only code executres-->
+<!--Loading the CSS files-->
+
+{% load static %}
+
+
+<!--Now if you want to include Bootstrap-->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!---This is how we include css files-->
+
+<link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <!--logo-->
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'music:index' %}">CloudMusic</a>
+        </div>
+
+    </div>
+</nav>
+
+
 
 {% if all_albums %}
     
-    
-    <ul>
-        <h3>Here all my albums</h3>
+    <h3>Here all my albums</h3>
 
+    <ul>
         {% for album in all_albums %}
 
 
