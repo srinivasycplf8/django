@@ -3,16 +3,14 @@
 {% block body %}
     {% if all_albums %}
         
-        <h3>Here all my albums</h3>
 
         <ul>
             {% for album in all_albums %}
 
 
-            <li><a href="{% url 'music:detail' album.id %}">{{album.album_title}}</a></li>
+            <li><a href="{% url 'music:detail' album.id %}" style="color: black;font-size: medium;"><strong>{{album.album_title}}</strong></a></li>
 
             {% endfor %}
-
 
 
 
