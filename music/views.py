@@ -9,13 +9,13 @@ from django.template import loader
 from django.http import HttpResponse
 
 def index(request):
-    albums=Album.objects.all()
+    all_albums=Album.objects.all()
 
 
     template=loader.get_template('music/index.html')
 
     context={
-        'all_albums':albums
+        'all_albums':all_albums
     }
     
 
