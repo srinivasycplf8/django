@@ -1,3 +1,11 @@
 body{
-    background-color: #EA638C;
+    background-color: #b40a3d;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family:  'Krona One', sans-serif;
 }
