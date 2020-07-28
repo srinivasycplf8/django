@@ -24,6 +24,14 @@ class Album(models.Model):
 
     album_logo=models.CharField(max_length=1000)
 
+
+    #now in comand prompt i want to see all the Album objects
+    #if we use Album.obkject.all we'll get in class 
+    #that's not we need
+
+    def __str__(self):
+        return self.album_title + '-' +self.artist
+
 class Song(models.Model):
      
      #So each """ALBUM" has 12 to 15 songs
