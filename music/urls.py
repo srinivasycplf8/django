@@ -10,19 +10,17 @@ urlpatterns = [
 
     ##for using regular expression we have to use re_path
     ##instead of ""path"""
-    re_path(r'^$', views.index,name="index"),
+    re_path(r'^$', views.IndexView.as_view(),name="index"),
 
     ##whenever I click the album,it gives mae all songs
     #so we have to pass an id 
 
     #/music/712/
 
-    re_path(r'^(?P<album_id>[0-9]+)/$',views.detail,name="detail"),
+    re_path(r'^(?P<pk>[0-9]+)/$',views.DetailView.as_view(),name="detail"),
 
 
-    #music/<album_id>/is_favorite
 
-    re_path(r'^(?P<album_id>[0-9]+)/favorite/$',views.favorite,name="favorite"),
 
     
 ]
