@@ -32,3 +32,42 @@ class AlbumDelete(DeleteView):
     model=Album
     success_url=reverse_lazy('music:index')
 
+class UserFormView(View):
+
+    form_class=UserForm
+    template_name="music/registration_form.html"
+    
+    #display blank form
+    def get(self,request):
+        form=self.form_class(None)
+        return render(request,self.template_name,{'form':form})
+
+    #processs form data
+    def post(self,request):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+            #here we are storing information 
+            #and we are doing further validation
+            user=form.save(commit=False)
+            #at this point it won't save database but it stores locally
+
+            #cleaned normalized data
+            #like for example everoune using a date format
+
+            username=form.cleaned_data['username']
+            password=form.cleaned_data['password']
+
+            #the cleaned_data acts like a dictorinay so the keys ar einside and it gives
+            #the value
+
+            #Now if you want to change the password
+
+            user.set_password(password)
+            user.save()
+            
+            
+
+        
+
+
