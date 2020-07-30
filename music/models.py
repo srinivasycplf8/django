@@ -23,7 +23,7 @@ class Album(models.Model):
 
     genre=models.CharField(max_length=100)
 
-    album_logo=models.CharField(max_length=1000)
+    album_logo=models.FileField()
 
     def get_absolute_url(self):
        return reverse('music:detail',kwargs={'pk':self.pk})
