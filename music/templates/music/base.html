@@ -11,14 +11,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/1b65ffa4c8.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 
 
 
 </head>
-<body>
+<body style="background-color: #abe9cd;
+background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);">
     
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -70,7 +70,7 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="">
-                    <a href="#">
+                    <a href="{% url 'music:album-add' %}">
                         <span class='fa fa-plus' style='color:whitesmoke' aria-hidden="true"></span>&nbsp;
                         Add Album
                     </a>

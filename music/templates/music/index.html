@@ -7,8 +7,17 @@
         <ul>
             {% for album in all_albums %}
 
+            <li style="float: left;" class="col-md-4">
+                <a href="{% url 'music:detail' album.id %}" style="color: black;font-size: medium;">
 
-            <li><a href="{% url 'music:detail' album.id %}" style="color: black;font-size: medium;"><strong>{{album.album_title}}</strong></a></li>
+                <div class="card" style="width: 18rem;" >
+                    <img class="card-img-top" src="{{ album.album_logo }}" alt="Card image cap" height="300" width="300">
+                    <div class="card-body">
+                    <p class="card-text">{{album.album_title}}</p>
+                    </div>
+                </div>
+            </li>
+
 
             {% endfor %}
 
