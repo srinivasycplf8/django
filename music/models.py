@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 #After creating a model...use cmd to activate these models
@@ -24,11 +25,11 @@ class Album(models.Model):
 
     album_logo=models.CharField(max_length=1000)
 
+    def get_absolute_url(self):
+       return reverse('music:detail',kwargs={'pk':self.pk})
 
-    #now in comand prompt i want to see all the Album objects
-    #if we use Album.obkject.all we'll get in class 
-    #that's not we need
 
+ 
     def __str__(self):
         return self.album_title + '-' +self.artist
 
