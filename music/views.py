@@ -47,26 +47,33 @@ class UserFormView(View):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            #here we are storing information 
-            #and we are doing further validation
-            user=form.save(commit=False)
-            #at this point it won't save database but it stores locally
 
-            #cleaned normalized data
-            #like for example everoune using a date format
+            user=form.save(commit=False)
+
 
             username=form.cleaned_data['username']
             password=form.cleaned_data['password']
 
-            #the cleaned_data acts like a dictorinay so the keys ar einside and it gives
-            #the value
-
-            #Now if you want to change the password
 
             user.set_password(password)
             user.save()
+
+
+            #returns User Objects if credentials are correct
+
+            user=authenticate(username=username,password=password)
+
+            if user is not None:
+                if user.is_active:
+                    #then you logged in
+                    login(request,user)
+                    return redirect('music:index')
+
+        #try again 
+
+        return render(request,self.template_name,{'form':form})
             
-            
+
 
         
 
