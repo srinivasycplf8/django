@@ -30,6 +30,20 @@ urlpatterns = [
 
     re_path(r'^register/$',views.UserFormView.as_view(),name="register"), 
 
+    re_path(r'^(?P<pk>[0-9]+)/create_song/$', views.SongCreate.as_view(), name='create_song'),
+
+    re_path(r'^songs/(?P<filter_by>[a-zA_Z]+)/$', views.SongView.as_view(), name='songs'),
+
+    re_path(r'^(?P<album_id>[0-9]+)/delete_song/(?P<song_id>[0-9]+)/$', views.delete_song, name='delete_song'),
+
+    re_path(r'^(?P<song_id>[0-9]+)/favorite/$', views.favorite, name='favorite')
+
+
+    #music/1/add_song
+
+    #re_path(r'^(?P<album_id>[0-9]+)/create_song/$', views.create_song.as_view(), name='create_song')
+
+
 
 
 
